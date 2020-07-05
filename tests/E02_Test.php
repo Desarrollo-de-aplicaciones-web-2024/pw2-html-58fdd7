@@ -34,11 +34,11 @@ class E02_Test extends PruebasHTML {
 
             $this->assertEquals(1, count($img), "({$archivo}) Debe haber 1 elemento <img>");
 
-            $src = $img[0]->getAttribute('src');
+            $src = trim($img[0]->getAttribute('src'));
             $this->assertNotEmpty(trim($src), "({$archivo}) Falta el atributo src o no tiene valor en la etiqueta <img>");
             $this->assertEquals($imagen, $src, "({$archivo}) La ruta de la imagen es incorrecta");
 
-            $src = $img[0]->getAttribute('alt');
+            $src = trim($img[0]->getAttribute('alt'));
             $this->assertNotEmpty(trim($src), "({$archivo}) Falta el atributo alt o no tiene valor en la etiqueta <img>");
             $this->assertEqualsIgnoringCase($sistema, $src, "({$archivo}) El texto alternavito de la imagen no es el correcto ($sistema)");
 
@@ -46,17 +46,17 @@ class E02_Test extends PruebasHTML {
 
             $this->assertEquals(2, count($a), "({$archivo}) Deben haber 2 elementos <a>");
 
-            $href = $a[1]->getAttribute('href');
+            $href = trim($a[1]->getAttribute('href'));
 
             $this->assertNotEmpty($href, "({$archivo}) Atributo href del hipervínculo no establecido");
             $this->assertNotFalse(filter_var($href, FILTER_VALIDATE_URL), "({$archivo}) El hipervínculo a Wikipedia no es válido (no olvides agregar http:// o https://)");
             $this->assertStringContainsStringIgnoringCase('wikipedia.org/', $href, "({$archivo}) El hipervínculo no lleva a Wikipedia");
 
-            $target = $a[1]->getAttribute('target');
+            $target = trim($a[1]->getAttribute('target'));
             $this->assertNotEmpty($target, "({$archivo}) Atributo target no establecido");
             $this->assertEquals($target, '_blank', "({$archivo}) Atributo target no está establecido correctamente");
 
-            $title = $a[1]->getAttribute('title');
+            $title = trim($a[1]->getAttribute('title'));
             $this->assertNotEmpty($title, "({$archivo}) Atributo title no establecido");
             $this->assertEqualsIgnoringCase($title, 'Ver en Wikipedia', "({$archivo}) Atributo title no está establecido correctamente");
         }
