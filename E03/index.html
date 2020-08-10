@@ -13,16 +13,16 @@
     <label for="email">E-Mail:</label><br>
     <input type="email" id="email" placeholder="E-Mail" name="email" required><br>
     <label for="contraseña">Contraseña:</label><br>
-    <input type="password" id="contraseña" name="password" placeholder="Contraseña"><br>
-    <input type="radio" name="sexo" value="h"> Hombre
-    <input type="radio" name="sexo" value="m"> Mujer
+    <input type="password" id="contraseña" name="password" placeholder="Contraseña" required><br>
+    <label><input type="radio" name="sexo" value="h" checked="checked"> Hombre</label>
+    <label><input type="radio" name="sexo" value="m"> Mujer</label>
   </fieldset>
 
   <fieldset>
     <legend>Servicio de noticias</legend>
-    <label><input type="checkbox">Noticias de política</label><br>
-    <label><input type="checkbox">Noticias de espectáculos</label><br>
-    <label><input type="checkbox">Noticias de tecnología</label><br>
+    <label><input type="checkbox" name="noticias[]" value="Noticias de política">Noticias de política</label><br>
+    <label><input type="checkbox" name="noticias[]" value="Noticias de espectáculos">Noticias de espectáculos</label><br>
+    <label><input type="checkbox" name="noticias[]" value="Noticias de tecnología">Noticias de tecnología</label><br>
     <label for="entrega">Método de entrega</label><br>
     <select name="entrega">
 

@@ -20,8 +20,8 @@ Crea un nuevo documento HTML con un formulario que permita registrar nuevos usua
 * El formulario debe enviar los datos utilizando el método GET, a la URL http://servicios.ver.ucc.mx/procesar.php
 * Cada elemento debe tener su propia etiqueta (elemento label).
 * Dale nombre a cada campo (atributo name)
-* Los campos para el Nombre, E-mail y Contraseña deben ser obligatorios
-* Agrega un texto de ayuda (placeholder) para los campos Nombre y E-mail
+* Los campos para el Nombre, E-mail y Contraseña deben ser obligatorios.
+* Agrega un texto de ayuda (placeholder) para los campos Nombre, E-mail y Contraseña.
 * Los valores para los elementos checkbox, radio button deben ser los mismos que las etiquetas.
 * Los valores para los elementos option del elemento select deben ser los mismos a su correspondiente leyenda.
 ### Resultado final
