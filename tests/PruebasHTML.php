@@ -21,7 +21,7 @@ class PruebasHTML extends TestCase {
         $this->assertGreaterThan(0, $count, 'El archivo ' . $nombre . ' está vacío');
 
         $this->assertStringContainsStringIgnoringCase(self::DOC_TYPE, trim($file[0]), "($nombre) Falta la Declaración del Tipo de Documento (DTD) HTML5");
-        $this->assertStringContainsString('<html>', trim($file[1]), "($nombre) Falta la etiqueta de apertura <html> seguida de la DTD");
+        $this->assertStringContainsString('<html', trim($file[1]), "($nombre) Falta la etiqueta de apertura <html> seguida de la DTD");
         $this->assertStringContainsString('<head>', trim($file[2]), "($nombre) Falta la etiqueta de apertura <head> seguida de <html>");
         $this->assertStringContainsStringIgnoringCase('<meta charset="UTF-8">', trim($file[3]), "($nombre) Falta la etiqueta <meta charset=\"UTF-8\"> seguida de <head>");
 
