@@ -157,15 +157,15 @@ class E03_Test extends PruebasHTML
         }
 
         $this->assertEquals(3, $nombre_correcto, 'Los 3 checkboxes deben tener el mismo nombre (noticias[])');
-        $this->assertEquals(1, $politica, 'El valor de un solo checkbox debe ser Noticias de política');
-        $this->assertEquals(1, $espectaculos, 'El valor de un solo checkbox debe ser Noticias de espectáculos');
-        $this->assertEquals(1, $tecnologia, 'El valor de un solo checkbox debe ser Noticias de tecnología');
+        $this->assertEquals(1, $politica, 'El valor (value) del primer checkbox debe ser "Noticias de política"');
+        $this->assertEquals(1, $espectaculos, 'El valor (value) del segundo checkbox debe ser "Noticias de espectáculos"');
+        $this->assertEquals(1, $tecnologia, 'El valor (value) del tercer checkbox debe ser "Noticias de tecnología"');
 
 
         /////////////////////////////////////////////////////////////
 
         $this->assertEquals(1, count($select), 'Debe haber 1 elemento <select>');
-        $this->assertEquals(2, count($options), 'Deben haber 2 elementos <option>');
+        $this->assertEquals(2, count($options), 'El elemento <select> debe tener 2 elementos <option>');
 
         $portal = 0;
         $email = 0;
@@ -181,8 +181,8 @@ class E03_Test extends PruebasHTML
             }
         }
 
-        $this->assertEquals(1, $portal, 'El valor de un solo <option> debe ser Desde el portal');
-        $this->assertEquals(1, $email, 'El valor de un solo <option> debe ser Enviar a mi e-mail');
+        $this->assertEquals(1, $portal, 'El valor (value) del primer <option> debe ser "Desde el portal"');
+        $this->assertEquals(1, $email, 'El valor (value) del segundo <option> debe ser "Enviar a mi e-mail"');
 
         /////////////////////////////////////////////////////////////
 
@@ -194,7 +194,7 @@ class E03_Test extends PruebasHTML
 
         $this->assertNotNull($input_submit, 'No se encontró el input de tipo submit');
         $this->assertNotEmpty(trim($input_submit->getAttribute('value')), 'El botón Enviar no tiene el atributo value o está vacío');
-        $this->assertEquals('Enviar', trim($input_submit->getAttribute('value')), 'El atributo value del botón no tiene el valor correcto');
+        $this->assertEquals('Enviar', trim($input_submit->getAttribute('value')), 'El valor (value) del botón submit debe ser "Enviar"');
 
 
         /////////////////////////////////////////////////////////////
