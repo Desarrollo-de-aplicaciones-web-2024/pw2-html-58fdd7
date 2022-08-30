@@ -128,7 +128,7 @@ class E03_Test extends PruebasHTML
 
         ////////////////////////////////////////////////////////
 
-        $this->assertEquals(3, count($input_checkbox), 'Deben haber 2 inputs de tipo checkbox');
+        $this->assertEquals(3, count($input_checkbox), 'Deben haber 3 inputs de tipo checkbox');
 
 
         $nombre_correcto = 0;
