@@ -63,4 +63,33 @@ class E02_Test extends PruebasHTML {
 
     }
 
+    public function testSolucionCorrectaTablas(){
+        $archivo = self::DIR . 'index.html';
+
+        $this->estructuraCorrectaDocumentoHTML($this->root . $archivo);
+
+        $str = str_ireplace(self::DOC_TYPE, '', file_get_contents($this->root . $archivo));
+
+        $doc = new DOMDocument();
+
+        libxml_use_internal_errors(true);
+        $doc->loadHTML($str);
+
+        $this->assertIsObject($doc, "No se pudo leer la estructura del documento ({$archivo}), revisa que sea un documento HTML válido");
+
+        $table = $doc->getElementsByTagName('table');
+        $this->assertCount(1, $table, "($archivo) Debe haber 1 elemento <table>");
+
+        $tableHeader = $table[0]->getElementsByTagName('thead');
+        $this->assertCount(1, $tableHeader, "($archivo) Debe haber 1 elemento <thead> en la tabla");
+
+        $tableBody = $table[0]->getElementsByTagName('tbody');
+        $this->assertCount(1, $tableBody, "($archivo) Debe haber 1 elemento <tbody> en la tabla");
+
+        $th = $table[0]->getElementsByTagName('th');
+        $this->assertCount(3, $th, "($archivo) Debe haber 3 elementos <th> en la tabla");
+
+        $td = $table[0]->getElementsByTagName('td');
+        $this->assertCount(30, $td, "($archivo) Debe haber 30 elementos <td> en la tabla");
+    }
 }
